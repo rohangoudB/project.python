@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Practice application form</title>
+<style>
+  body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
+  label { display: block; margin-top: 1rem; font-weight: 600; }
+  input, select, textarea { width: 100%; padding: .5rem; box-sizing: border-box; }
+</style></head>
+<body>
+  <h1>Summer Internship Application (practice)</h1>
+  <form onsubmit="alert('You would submit here. The script never does this for you.'); return false;">
+    <label for="fn">First name</label><input id="fn" name="first_name">
+    <label for="ln">Last name</label><input id="ln" name="last_name">
+    <label for="em">Email address</label><input id="em" type="email">
+    <label for="ph">Mobile number</label><input id="ph" type="tel">
+    <label for="un">University / College</label><input id="un">
+    <label for="gp">CGPA</label><input id="gp">
+    <label for="ct">Country</label>
+    <select id="ct"><option>Select</option><option>India</option><option>Germany</option></select>
+    <label for="gh">GitHub profile</label><input id="gh">
+    <label for="pw">Create password</label><input id="pw" type="password">
+    <label for="sop">Why do you want this internship?</label><textarea id="sop" rows="4"></textarea>
+    <label for="cv">Upload CV</label><input id="cv" type="file">
+    <p><button type="submit">Submit</button></p>
+  </form>
+</body></html>
