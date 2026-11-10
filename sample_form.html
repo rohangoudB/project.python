@@ -1,26 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><title>Practice application form</title>
-<style>
-  body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
-  label { display: block; margin-top: 1rem; font-weight: 600; }
-  input, select, textarea { width: 100%; padding: .5rem; box-sizing: border-box; }
-</style></head>
+<head>
+  <meta charset="utf-8" />
+  <title>Summer Internship Application (demo)</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 620px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #f9fafb;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
 <body>
-  <h1>Summer Internship Application (practice)</h1>
-  <form onsubmit="alert('You would submit here. The script never does this for you.'); return false;">
-    <label for="fn">First name</label><input id="fn" name="first_name">
-    <label for="ln">Last name</label><input id="ln" name="last_name">
-    <label for="em">Email address</label><input id="em" type="email">
-    <label for="ph">Mobile number</label><input id="ph" type="tel">
-    <label for="un">University / College</label><input id="un">
-    <label for="gp">CGPA</label><input id="gp">
+  <h1>Summer Internship Application (demo)</h1>
+  <form method="POST" action="/submit">
+    <label for="fn">First name</label>
+    <input id="fn" name="first_name" type="text" required />
+
+    <label for="ln">Last name</label>
+    <input id="ln" name="last_name" type="text" required />
+
+    <label for="em">Email address</label>
+    <input id="em" name="email" type="email" required />
+
+    <label for="ph">Mobile number</label>
+    <input id="ph" name="phone" type="tel" required />
+
+    <label for="un">University / College</label>
+    <input id="un" name="university" type="text" required />
+
+    <label for="gp">CGPA</label>
+    <input id="gp" name="cgpa" type="text" required />
+
     <label for="ct">Country</label>
-    <select id="ct"><option>Select</option><option>India</option><option>Germany</option></select>
-    <label for="gh">GitHub profile</label><input id="gh">
-    <label for="pw">Create password</label><input id="pw" type="password">
-    <label for="sop">Why do you want this internship?</label><textarea id="sop" rows="4"></textarea>
-    <label for="cv">Upload CV</label><input id="cv" type="file">
-    <p><button type="submit">Submit</button></p>
+    <select id="ct" name="country" required>
+      <option value="" disabled selected>Select</option>
+      <option>India</option>
+      <option>Germany</option>
+      <option>USA</option>
+      <option>Canada</option>
+    </select>
+
+    <label for="gh">GitHub profile</label>
+    <input id="gh" name="github" type="url" />
+
+    <label for="pw">Create password</label>
+    <input id="pw" name="password" type="password" required />
+
+    <label for="sop">Why do you want this internship?</label>
+    <textarea id="sop" name="statement" rows="4" required></textarea>
+
+    <label for="cv">Upload CV</label>
+    <input id="cv" name="cv" type="file" />
+
+    <button type="submit">Submit</button>
+    <p class="note">*This demo stores the submission on the local server as a JSON file.*</p>
   </form>
-</body></html>
+</body>
+</html>
